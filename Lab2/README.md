@@ -1,10 +1,3 @@
----
-  title: "Лабораторная работа 2"
-  author: "Ильин А.В"
-  format: 
-    md:
-      output-file: README.md
----
 
 # Название работы
 
