@@ -1,0 +1,7 @@
+---
+  title: "Лабораторная работа 0"
+  author: "Ильин А.В"
+  format: 
+    md:
+      output-file: README.md
+---
