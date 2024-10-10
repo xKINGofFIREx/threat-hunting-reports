@@ -12,10 +12,14 @@
 
 ### Шаг 1: Установка R
 Скачать и установить [R для Windows](https://posit.co/download/rstudio-desktop/).
+
 ![R](imgs/R.png)
+
 ### Шаг 2: Установка RStudio
 Скачать и установить [RStudio для Windows](https://posit.co/download/rstudio-desktop/).
-![R](imgs/RStudio.png)
+
+![RStudio](imgs/RStudio.png)
+
 ### Шаг 3: Создание репозитория
 Создать и сделать публичным репозиторий на github.com.
 ### Шаг 4: Создание отчета
