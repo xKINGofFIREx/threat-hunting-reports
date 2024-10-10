@@ -28,14 +28,16 @@
     install.packages("dplyr")
 ```
 
-### 2. Анализ набора данных
+### 2. Подключение dplyr
+```
+    library(dplyr)
+``` 
 
 ### 3. Ответы на вопросы
 
 a\) Сколько строк в датафрейме?
 
 ```r
-    library(dplyr)
     starwars %>% nrow()
 ```
 
