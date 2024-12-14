@@ -25,7 +25,7 @@ artem.ilin.03@yandex.ru
 
 1. Скачивание пакета данных
 ```r
-#download.file("https://storage.yandexcloud.net/arrow-datasets/tm_data.pqt",destfile = "tm_data.pqt")
+download.file("https://storage.yandexcloud.net/arrow-datasets/tm_data.pqt",destfile = "tm_data.pqt")
 ```
 2. Подключение библиотек и выгрузка данных в таблицу
 ```r 
