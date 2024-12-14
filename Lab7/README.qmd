@@ -131,7 +131,7 @@ mutate(
     | !str_detect(dst, "^13.") 
     | !str_detect(dst, "^14.")
 )  
-%>% filter(time >= 1 & time <= 15) 
+%>% filter(hours >= 1 & hours <= 15) 
 %>% group_by(src) 
 %>% summarise("sum" = sum(bytes)) 
 %>% arrange(desc(sum)) 
