@@ -119,7 +119,7 @@ dbGetQuery(con,
         FROM (
             SELECT *,
                 EXTRACT(HOUR FROM epoch_ms(CAST(timestamp AS BIGINT))) AS hours
-            FROM tbl
+            FROM dat
         ) sub
         WHERE src <> '13.37.84.125'
             AND (src LIKE '12.%' OR src LIKE '13.%' OR src LIKE '14.%')
