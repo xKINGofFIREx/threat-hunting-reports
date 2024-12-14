@@ -26,7 +26,8 @@ artem.ilin.03@yandex.ru
 library(arrow)
 library(tidyverse)
 
-#download.file("https://storage.yandexcloud.net/arrow-datasets/tm_data.pqt",destfile = "tm_data.pqt")
+download.file("https://storage.yandexcloud.net/arrow-datasets/tm_data.pqt",destfile = "tm_data.pqt")
+
 dataset <- arrow::open_dataset(sources = "tm_data.pqt", format = "parquet")
 ```
 
