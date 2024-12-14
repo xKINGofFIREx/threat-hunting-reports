@@ -33,7 +33,7 @@ artem.ilin.03@yandex.ru
 
 1. Скачивание пакета данных
 ```r
-#download.file("https://storage.yandexcloud.net/arrow-datasets/tm_data.pqt",destfile = "tm_data.pqt")
+download.file("https://storage.yandexcloud.net/arrow-datasets/tm_data.pqt",destfile = "tm_data.pqt")
 ```
 2. Подключение библиотек и выгрузка данных в таблицу
 ```r 
@@ -91,31 +91,32 @@ dbGetQuery(con,
 ) %>% knitr::kable()
 ```
 ```{r}
-    hours count_star()
-1     0       169068
-2     1       168539
-3     2       168711
-4     3       169050
-5     4       168422
-6     5       168283
-7     6       169015
-8     7       169241
-9     8       168205
-10    9       168283
-11   10       168750
-12   11       168684
-13   12       168892
-14   13       169617
-15   14       169028
-16   15       168355
-17   16      4490576
-18   17      4483578
-19   18      4489386
-20   19      4487345
-21   20      4482712
-22   21      4487109
-23   22      4489703
-24   23      4488093
+| hours| trafictime|
+|-----:|----------:|
+|     0|     169068|
+|     1|     168539|
+|     2|     168711|
+|     3|     169050|
+|     4|     168422|
+|     5|     168283|
+|     6|     169015|
+|     7|     169241|
+|     8|     168205|
+|     9|     168283|
+|    10|     168750|
+|    11|     168684|
+|    12|     168892|
+|    13|     169617|
+|    14|     169028|
+|    15|     168355|
+|    16|    4490576|
+|    17|    4483578|
+|    18|    4489386|
+|    19|    4487345|
+|    20|    4482712|
+|    21|    4487109|
+|    22|    4489703|
+|    23|    4488093|
 ```
 
 ```r 
@@ -126,7 +127,7 @@ dbGetQuery(con,
         FROM (
             SELECT *,
                 EXTRACT(HOUR FROM epoch_ms(CAST(timestamp AS BIGINT))) AS hours
-            FROM tbl
+            FROM dat
         ) sub
         WHERE src <> '13.37.84.125'
             AND (src LIKE '12.%' OR src LIKE '13.%' OR src LIKE '14.%')
@@ -173,8 +174,26 @@ dbGetQuery(con,
 ) %>% knitr::kable()
 ```
 ```{r}
-    port dif
-1    37  174312.0109
+| port|  mean_bytes| max_bytes|   sum_bytes|         dif|
+|----:|-----------:|---------:|-----------:|-----------:|
+|   37| 35089.98907|    209402| 32136394510| 174312.0109|
+```
+```r
+dbGetQuery(con,
+"SELECT
+    src
+FROM (
+    SELECT
+        src,
+        AVG(bytes) AS mean_bytes
+    FROM tab
+    WHERE port = 37
+    GROUP BY src
+) AS result
+ORDER BY mean_bytes DESC
+LIMIT 1;"
+)
+%>% knitr::kable()
 ```
 ```{r}
 14.31.107.42
