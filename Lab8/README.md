@@ -166,8 +166,26 @@ dbGetQuery(con,
 ) %>% knitr::kable()
 ```
 ```{r}
-    port dif
-1    37  174312.0109
+| port|  mean_bytes| max_bytes|   sum_bytes|         dif|
+|----:|-----------:|---------:|-----------:|-----------:|
+|   37| 35089.98907|    209402| 32136394510| 174312.0109|
+```
+```r
+dbGetQuery(con,
+"SELECT
+    src
+FROM (
+    SELECT
+        src,
+        AVG(bytes) AS mean_bytes
+    FROM tab
+    WHERE port = 37
+    GROUP BY src
+) AS result
+ORDER BY mean_bytes DESC
+LIMIT 1;"
+)
+%>% knitr::kable()
 ```
 ```{r}
 14.31.107.42
