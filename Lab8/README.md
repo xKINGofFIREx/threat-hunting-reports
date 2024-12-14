@@ -125,7 +125,7 @@ dbGetQuery(con,
             AND (src LIKE '12.%' OR src LIKE '13.%' OR src LIKE '14.%')
             AND (dst NOT LIKE '12.%' AND dst NOT LIKE '13.%' AND dst NOT LIKE '14.%')
             AND hours BETWEEN 1 AND 15
-        GROUP BY src
+        GROUP BY dat
     ) grp
     ORDER BY total_bytes DESC;"
 ) %>% knitr::kable()
