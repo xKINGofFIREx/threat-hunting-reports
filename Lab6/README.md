@@ -90,7 +90,7 @@ d) Все построенные графики вывести в виде ед�
 
 ![6](imgs/image6.png)
 
-```r
+```{r}
 https://datalens.yandex.cloud/3lyb4iy4ftpsq-ilinav-deshbord
 ```
 

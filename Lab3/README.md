@@ -24,7 +24,7 @@
 
 ### 1. Установка программного пакета nycflights13
 
-```
+```{r}
     install.packages('nycflights13')
 ```
 ### 2. Подключение nycflights13 и dplyr.
