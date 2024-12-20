@@ -24,12 +24,12 @@
 ## Шаги
 
 ### 1. Установка dplyr
-```         
+```{r}         
     install.packages("dplyr")
 ```
 
 ### 2. Подключение dplyr
-```
+```{r}
     library(dplyr)
 ``` 
 
