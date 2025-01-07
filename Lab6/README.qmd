@@ -98,7 +98,7 @@ d) Все построенные графики вывести в виде ед�
 
 ![6](imgs/image6.png)
 
-Ссылка на [дашборд] (https://datalens.yandex.cloud/3lyb4iy4ftpsq-ilinav-deshbord).
+[Ссылка на дашборд](https://datalens.yandex.cloud/3lyb4iy4ftpsq-ilinav-deshbord).
 
 
 ## Оценка результата
